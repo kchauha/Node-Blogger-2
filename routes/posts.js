@@ -8,7 +8,6 @@ var db = require('monk')('localhost/nodeblog');
 router.get('/add', function(req, res, next) {
 
 	var categories = db.get('categories');
-	console.log(categories);
 	categories.find({}, {}, function(err, categories){
 		 res.render('addposts', {
   			'title' : 'Addposts',
